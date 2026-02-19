@@ -2316,13 +2316,13 @@ html {
 
 .partners-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 .partners-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns:(2, 1fr);
     /* صورة واحدة في كل صف */
     gap: 25px;
 }
@@ -2341,6 +2341,15 @@ html {
     object-fit: contain;
 }
 
+@media(max-width:1200px){
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .partner img {
+        max-width: 250px;
+    }
+}
+
 /* Tablet */
 @media (max-width: 991px) {
     .partners-grid {
@@ -2353,7 +2362,7 @@ html {
 }
 
 /* Mobile */
-@media (max-width: 686px) {
+@media (max-width: 768px) {
     .partners-grid {
         grid-template-columns: repeat(1, 1fr);
     }
