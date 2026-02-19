@@ -169,5 +169,27 @@
             }, 250);
         });
 
-        // Initialize with English
-        switchLanguage('en');
+/* Reveal divs except header, nav, footer */
+
+const divs = document.querySelectorAll(
+  "div:not(header div):not(nav div):not(footer div)"
+);
+
+divs.forEach(div => {
+  div.classList.add("reveal");
+});
+
+window.addEventListener("scroll", () => {
+
+  divs.forEach(div => {
+
+    const top = div.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (top < screenHeight - 100) {
+      div.classList.add("show");
+    }
+
+  });
+
+});
